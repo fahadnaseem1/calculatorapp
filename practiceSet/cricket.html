@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+    <title>Cricket Game</title>
+</head>
+<body>
+    <h1> Bat ball stump game </h1>
+    
+    <button onclick="
+    let computerChoice;
+    let randomNumber = Math.random()*3;
+    if(randomNumber>0 && randomNumber<=1){
+        computerChoice = 'bat';
+    } else if(randomNumber>1 && randomNumber<=2){
+        computerChoice = 'ball';
+    } else{
+        computerChoice = 'stump';
+    }
+    let resultMsg;
+    if(computerChoice === 'bat'){
+        resultMsg = `it's a Draw`;
+    } else if(computerChoice === 'ball'){
+        resultMsg = 'You Win';
+    } else{
+        resultMsg = 'You Lose';
+    }
+    alert(`you choose to bat. computer choose ${computerChoice}. and  ${resultMsg}`);
+    " >bat</button>
+    <button onclick="
+    let computerChoice;
+    let randomNumber = Math.random()*3;
+    if(randomNumber>0 && randomNumber<=1){
+        computerChoice = 'bat';
+    } else if(randomNumber>1 && randomNumber<=2){
+        computerChoice = 'ball';
+    } else{
+        computerChoice = 'stump';
+    }
+    let resultMsg;
+    if(computerChoice === 'bat'){
+        resultMsg = `you lose`;
+    } else if(computerChoice === 'ball'){
+        resultMsg = `it's a Draw`;
+    } else{
+        resultMsg = 'You win';
+    }
+    alert(`you choose to ball. computer choose ${computerChoice}. and  ${resultMsg}`);">ball</button>
+    <button onclick="
+    let computerChoice;
+    let randomNumber = Math.random()*3;
+    if(randomNumber>0 && randomNumber<=1){
+        computerChoice = 'bat';
+    } else if(randomNumber>1 && randomNumber<=2){
+        computerChoice = 'ball';
+    } else{
+        computerChoice = 'stump';
+    }
+    let resultMsg;
+    if(computerChoice === 'bat'){
+        resultMsg = `you win`;
+    } else if(computerChoice === 'ball'){
+        resultMsg = `you lose`;
+    } else{
+        resultMsg = `it's a Draw`;
+    }
+    alert(`you choose stump. computer choose ${computerChoice}. and  ${resultMsg}`);">stump</button>
+</body>
+</html>
