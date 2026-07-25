@@ -24,12 +24,31 @@
     computerChoice=generateComputerChoice();  
     let resultMsg=getResult('stump',computerChoice);
     showResult('stump',computerChoice,resultMsg);">stump</button>
+    <button onclick="
+      localStorage.clear();
+      resetScore();"> reset </button>
+      <h3 id="user-move"></h3>
+      <h3 id="computer-move"></h3>
+      <h3 id="result"></h3>
+      <h3 id="score"></h3>
 
     <script>
-        let score ={
+        let scoreStr= localStorage.getItem('score');
+        let score;
+        resetScore(scoreStr);
+
+        function resetScore(scoreStr){
+            score =  scoreStr ? JSON.parse(scoreStr): {
             win: 0,
             lost: 0,
             tie: 0,
+        };
+        score.displayScore= function(){
+                return `won:${score.win} lost:${score.lost} tie:${score.tie}`;
+            };
+
+            showResult();
+
         }
 
         function generateComputerChoice(){
@@ -81,11 +100,14 @@
         }
 
         function showResult(userMove,computerMove,result){
-              alert(`you choose to ${userMove} computer choose ${computerMove}  
-              
-              ${result}
-              
-              won:${score.win} lost:${score.lost} tie:${score.tie}`);
+            localStorage.setItem('score',JSON.stringify(score));
+            document.querySelector('#user-move').innerText= 
+            userMove ? `you choose to ${userMove} `: ' ';
+            document.querySelector('#computer-move').innerText=
+            computerMove ?  `computer choose ${computerMove}`: ' ';
+            document.querySelector('#result').innerText= 
+            result ? `${result}` :' ';
+            document.querySelector('#score').innerText= `${score.displayScore()}`;
         }
     </script>
 </body>
