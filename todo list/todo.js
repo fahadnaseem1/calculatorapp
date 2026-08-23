@@ -18,11 +18,9 @@
     for( let i =0;i< todoList.length;i++){
       let {item , date} = todoList[i];
         newHtml+= `
-        <div>
             <span>${item} </span>
             <span>${date}</span>
-            <button onClick="todoList.splice(${i},1); displayElement();">delete</button>
-        </div>
+            <button class="btn-delete" onclick="todoList.splice(${i},1); displayElement();">delete</button>
         `; 
     }
     containerElement.innerHTML=newHtml;
